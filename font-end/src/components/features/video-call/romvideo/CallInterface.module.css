@@ -1,0 +1,365 @@
+/* Enhanced LiveKit Components Styling */
+
+/* Custom participant tile animations */
+.participantTile {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.participantTile:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* LiveKit component overrides */
+.participantTile :global(.lk-participant-tile) {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.participantTile :global(.lk-participant-placeholder) {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-radius: 12px;
+}
+
+/* Hide duplicate name overlays if they exist */
+.participantTile :global(.lk-participant-name) {
+  display: none !important;
+}
+
+/* Ensure microphone indicator is visible */
+.participantTile :global(.lk-speaking-indicator) {
+  display: block !important;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+}
+
+/* Ensure video fills the container */
+.participantTile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Avatar container styling */
+.avatarContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+/* Enhanced grid layout for responsive design */
+.videoGrid {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+  grid-auto-rows: 1fr;
+}
+
+/* Ensure proper video container sizing */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .videoGrid {
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .videoContainer {
+    min-height: 150px;
+  }
+}
+
+/* Participant name overlay styling */
+.participantName {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(8px);
+  color: white !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 20 !important;
+  transition: opacity 0.2s ease;
+  display: block !important;
+  pointer-events: none;
+  opacity: 1 !important;
+}
+
+.participantTile:hover .participantName {
+  opacity: 1 !important;
+}
+
+/* Ensure text inside participant name is visible */
+.participantName * {
+  color: white !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* Connection quality indicator */
+.connectionQuality {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+}
+
+/* Loading skeleton for participant tiles */
+.participantSkeleton {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 12px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced control bar styling */
+.controlBar {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 0;
+}
+
+/* Control buttons styling */
+.controlButton {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+  min-width: 56px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.controlButton:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Ensure control bar has enough space */
+.controlsContainer {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* Fullscreen mode adjustments */
+.fullscreenMode {
+  background: #000;
+}
+
+.fullscreenMode .controlBar {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* Screen share indicator */
+.screenShareIndicator {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Recording indicator */
+.recordingIndicator {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Panel transitions */
+.sidePanel {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+/* Custom scrollbar for panels */
+.sidePanel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidePanel::-webkit-scrollbar-track {
+  background: rgba(75, 85, 99, 0.1);
+}
+
+.sidePanel::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.3);
+  border-radius: 3px;
+}
+
+.sidePanel::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.5);
+}
+
+/* Floating action button styles */
+.floatingButton {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floatingButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.floatingButton:active {
+  transform: translateY(0);
+}
+
+/* LiveKit grid layout overrides */
+:global(.lk-grid-layout) {
+  gap: 16px !important;
+}
+
+:global(.lk-grid-layout-wrapper) {
+  padding: 0 !important;
+}
+
+/* Hide only LiveKit's built-in name overlays inside participant tiles */
+:global(.lk-participant-tile .lk-participant-name) {
+  display: none !important;
+}
+
+/* Ensure our custom participant names are visible */
+.participantTile .participantName {
+  display: block !important;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(8px);
+  color: white !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 20 !important;
+  pointer-events: none;
+}
+
+/* Force visibility for ParticipantName component inside our custom container */
+.participantName :global(.lk-participant-name) {
+  display: inline !important;
+  color: white !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Ensure speaking indicators are visible */
+:global(.lk-speaking-indicator) {
+  display: block !important;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  :global(.lk-grid-layout) {
+    gap: 8px !important;
+  }
+}
+
+/* Participant count badge */
+.participantCount {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+/* Connection status indicator */
+.connectionStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.connectionStatus.connected {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.connectionStatus.connecting {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.connectionStatus.disconnected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Pulse animation for connection indicator */
+.connectionPulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
