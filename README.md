@@ -147,15 +147,16 @@ The frontend communicates with a unified backend via an `Axios` instance configu
 
 ## 📸 Screenshots
 
-*(Replace placeholder text with actual image links)*
+The following screenshots demonstrate different aspects of the FastBite Group application:
 
-| Landing Page | Group Chat Interface |
-|--------------|----------------------|
-| `[Insert Screenshot Here]` | `[Insert Screenshot Here]` |
-
-| Video Conference | Dark Mode Dashboard |
-|------------------|---------------------|
-| `[Insert Screenshot Here]` | `[Insert Screenshot Here]` |
+| | |
+|:---:|:---:|
+| ![Landing Page](./image.png)<br>**Landing Page** | ![Group Chat Interface](./image-1.png)<br>**Group Chat Interface** |
+| ![Video Conference](./image-2.png)<br>**Video Conference** | ![Dashboard View](./image-3.png)<br>**Dashboard View** |
+| ![Platform View](./image-4.png)<br>**Platform View** | ![Platform View](./image-5.png)<br>**Platform View** |
+| ![Platform View](./image-6.png)<br>**Platform View** | ![Platform View](./image-7.png)<br>**Platform View** |
+| ![Platform View](./image-8.png)<br>**Platform View** | ![Platform View](./image-9.png)<br>**Platform View** |
+| ![Platform View](./image-10.png)<br>**Platform View** | |
 
 ---
 
